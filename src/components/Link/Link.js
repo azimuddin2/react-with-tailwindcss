@@ -1,13 +1,11 @@
 import React from 'react';
 
-const Link = (props) => {
-    const { name, link } = props.route;
+const Link = ({ route }) => {
+    const { name, path } = route;
     return (
-        <div>
-            <li className='mr-12'>
-                <a href={link}>{name}</a>
-            </li>
-        </div>
+        <li className='mr-12'>
+            <a href={path}>{name}</a>
+        </li>
     );
 };
 

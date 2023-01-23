@@ -2,8 +2,8 @@ import { ArrowRightIcon } from '@heroicons/react/solid';
 import React from 'react';
 import Benefit from '../Benefit/Benefit';
 
-const PricingOption = (props) => {
-    const { image, name, price, benefits } = props.option;
+const PricingOption = ({ option }) => {
+    const { image, name, price, benefits } = option;
 
     return (
         <div className='bg-white text-center p-6 rounded-md  shadow-xl'>
@@ -18,8 +18,8 @@ const PricingOption = (props) => {
             <div>
                 <h1 className='text-xl text-left'>Benefits</h1>
                 {
-                    benefits.map(benefit => <Benefit
-                        key={benefit.id}
+                    benefits.map((benefit, index) => <Benefit
+                        key={index}
                         benefit={benefit}
                     ></Benefit>)
                 }
